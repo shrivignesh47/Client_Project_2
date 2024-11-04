@@ -1,0 +1,145 @@
+/* Footer General Styles */
+.footer {
+    background-color: #222; /* Dark background for contrast */
+    padding: 60px 20px; /* More padding for a spacious feel */
+    display: flex;
+    justify-content: center; /* Center the content */
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the footer */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Footer Left Section */
+.footer-left, .footer-right {
+    max-width: 100%;
+    flex: 1 1 100%; /* Full width for small screens */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+/* Logo and Company Name */
+.footer-logo {
+    display: flex;
+    align-items: center; /* Center align logo and name */
+    margin-bottom: 20px; /* Space below logo */
+}
+
+.logo {
+    height: 50px; /* Slightly larger logo */
+    margin-right: 15px; /* Space between logo and name */
+}
+
+.company-name {
+    font-weight: bold; /* Bold company name */
+    font-size: 2em; /* Larger font size */
+    color: #ffffff; /* White color for contrast */
+}
+
+/* Footer Description */
+.description {
+    margin: 0 0 20px; /* Bottom margin for spacing */
+    font-size: 1.125em; /* Slightly larger description font */
+    color: #d3d3d3; /* Light grey for readability */
+}
+
+/* Copyright Text */
+.copyright {
+    font-size: 0.875em; /* Smaller font size for copyright */
+    color: #aaa; /* Lighter grey */
+}
+
+/* Right Section Styling */
+.footer-right {
+    display: flex;
+    flex-direction: column; /* Column layout for right section */
+    align-items: flex-start; /* Align items to the start */
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* Space between link sections */
+    width: 100%;
+    max-width: 500px; /* Max width for links */
+    margin-bottom: 20px; /* Margin below links */
+    flex-wrap: wrap; /* Wrap for smaller screens */
+}
+
+/* Link List Styles */
+.footer-links ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* No padding */
+    margin: 0 20px 20px 0; /* Margin for spacing */
+    flex: 1 1 100%; /* Full width for small screens */
+}
+
+/* Individual Link Styles */
+.footer-links li {
+    margin-bottom: 10px; /* Space below each link */
+}
+
+.footer-links a {
+    text-decoration: none; /* Remove underline */
+    color: #d3d3d3; /* Light grey color for links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffffff; /* Change to white on hover */
+}
+
+/* Footer Icons Section */
+.footer-icons {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.footer-icons a {
+    color: #d3d3d3; /* Icon color */
+    font-size: 1.75em; /* Larger icon size */
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.footer-icons a:hover {
+    color: #ffffff; /* Change color on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .footer-left, .footer-right {
+        flex: 1 1 50%; /* Half width for larger screens */
+        margin-bottom: 0; /* No bottom margin for larger screens */
+    }
+
+    .footer-right {
+        align-items: flex-end; /* Align right section to the end */
+    }
+
+    .footer-links ul {
+        flex: 1 1 30%; /* Flex basis for larger links */
+        margin: 0 20px; /* Margin for larger screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-left, .footer-right {
+        flex: 1 1 50%; /* 50% width on larger screens */
+    }
+    
+    .footer-links ul {
+        flex: 1 1 auto; /* Flexible sizing for links */
+        margin: 0; /* No margin */
+    }
+
+    .footer-right {
+        align-items: flex-end; /* Right align icons */
+    }
+}

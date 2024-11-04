@@ -1,0 +1,106 @@
+/* General body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color:#ecf1f7; /* Light grey background for better contrast */
+  color: #333; /* Dark grey text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main FAQ container */
+.faq {
+  max-width: 1310px; /* Constrained width for readability */
+  margin: 60px auto; /* Centered with spacing from top */
+  padding: 30px 20px; /* Padding for inner content */
+  background: #ffffff; /* White background for the FAQ box */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  border-radius: 12px; /* Rounded corners */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.faq:hover {
+  transform: translateY(-2px); /* Slight lift on hover for interactivity */
+}
+
+/* Header styles */
+.faq h1 {
+  font-size: 2.5rem; /* Larger main header */
+  font-weight: 600; /* Bold weight for emphasis */
+  color: #202124; /* Dark color for main title */
+  text-align: center; /* Center aligned for better focus */
+  margin-bottom: 40px; /* Spacing below the title */
+}
+
+.faq h2 {
+  font-size: 1.75rem; /* Slightly larger sub-headers */
+  font-weight: 500; /* Medium weight for sub-headers */
+  color: #333; /* Darker grey for sub-headers */
+  margin-top: 40px; /* Top margin for separation */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+/* Individual FAQ item styles */
+.faq-item {
+  background: #f9f9f9; /* Slightly off-white background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Inner padding */
+  margin-bottom: 15px; /* Spacing between items */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Transition effects */
+  position: relative; /* Relative positioning for pseudo elements */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  border-left: 4px solid #1976d2; /* Left border for a modern look */
+}
+
+/* Active FAQ item styles */
+.faq-item.active {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow when active */
+  background-color: #ecf1f7; /* Light blue background when active */
+}
+
+/* Header for FAQ items */
+.faq-item h3 {
+  font-size: 1.25rem; /* Slightly larger item header */
+  font-weight: 500; /* Medium weight for item headers */
+  color: #1976d2; /* Blue color for question text */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center alignment */
+  justify-content: space-between; /* Space between items */
+  margin: 0; /* No margin for clean look */
+}
+
+/* Hover effect for item headers */
+.faq-item h3:hover {
+  color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Paragraph styles */
+.faq-item p {
+  font-size: 1rem; /* Regular font size for answers */
+  line-height: 1.6; /* Spacing between lines */
+  margin-top: 10px; /* Top margin for spacing */
+  color: #5f6368; /* Grey color for text */
+  display: none; /* Initially hidden */
+  opacity: 0; /* Fully transparent */
+  max-height: 0; /* Constrained height */
+  transition: opacity 0.4s ease, max-height 0.4s ease; /* Smooth transition for expansion */
+}
+
+/* Active item paragraph styles */
+.faq-item.active p {
+  display: block; /* Show when active */
+  opacity: 1; /* Fully opaque */
+  max-height: 500px; /* Allow for larger height when open */
+}
+
+/* Arrow icon for dropdown indicator */
+.faq-item::after {
+  content: '\25BC'; /* Down arrow symbol */
+  font-size: 1.25rem; /* Larger arrow */
+  color: #5f6368; /* Grey color for the arrow */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* Arrow rotation when active */
+.faq-item.active::after {
+  transform: rotate(180deg); /* Rotate arrow when expanded */
+}

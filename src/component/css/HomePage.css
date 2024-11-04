@@ -1,0 +1,355 @@
+
+.hero {
+    background-color: #ecf1f7; /* Black background */
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:120vh;
+    position: relative;
+    margin-top: -2vh;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.tagline p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Gold color for the tagline */
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.25em;
+    margin-bottom: 40px;
+    color: #000000; /* Light gray for the description */
+    line-height: 1.6;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-button, .secondary-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px; /* Ensure buttons are large enough on smaller screens */
+    margin-bottom: 10px; /* Space between buttons on smaller screens */
+}
+
+
+
+.secondary-button {
+    background-color: transparent;
+    color: #040404;
+    border: 2px solid #333333;
+}
+
+.secondary-button:hover {
+    background-color: #000000;
+    color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        text-align: left; /* Align hero content to the left */
+    }
+
+    .hero h1 {
+        font-size: 9em; /* Larger heading on tablets and below */
+        font-weight: bold; /* Bold font for heading */
+    }
+
+    .hero-description {
+        font-size: 8.3em; /* Larger description on tablets and below */
+  /* Bold font for description */
+    }
+
+    .cta-container {
+        flex-direction: column;
+        text-align: left; /* Align hero content to the left */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 103px 15px;
+        text-align: left; /* Align hero content to the left */
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Larger heading on mobile */
+        font-weight: bold; /* Bold font for heading */
+    }
+
+    .hero-description {
+        font-size: 1.2em; /* Larger description on mobile */
+       
+    }
+
+    .cta-button, .secondary-button {
+        font-size: 1.2em; /* Larger buttons on mobile */
+        padding: 14px 24px;
+        text-align: left; /* Align hero content to the left */
+    }
+}
+
+
+/* Unique Features Section */
+.unique-features {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ecf1f7; /* Light gray background for the section */
+    height: 80vh;
+    margin-top: 15vh;
+}
+
+.unique-features h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #000000; /* Black for the title */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Feature Grid Layout */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Feature Item */
+.feature-item {
+    background-color: #ffffff; /* White background for each feature */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a minimalist effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+/* Feature Item Heading */
+.feature-item h3 {
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    color: #333333; /* Dark gray for the heading */
+    font-weight: 600;
+}
+
+/* Feature Item Description */
+.feature-item p {
+    font-size: 1em;
+    color: #666666; /* Medium gray for the description */
+    line-height: 1.6;
+}
+
+/* Feature Icon (Optional) */
+.feature-item .icon {
+    font-size: 3em;
+    color: #FFC72C; /* Use brand color for icons */
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .unique-features h2 {
+        font-size: 2em; /* Smaller title for tablets */
+    }
+
+    .feature-item h3 {
+        font-size: 1.5em; /* Adjust feature item heading size */
+    }
+    .unique-features {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #ecf1f7; /* Light gray background for the section */
+        height: 12vh;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .unique-features h2 {
+        font-size: 1.75em; /* Smaller title for mobile */
+    }
+
+    .feature-item h3 {
+        font-size: 1.25em; /* Smaller feature item heading size on mobile */
+    }
+
+    .feature-item p {
+        font-size: 0.95em; /* Slightly smaller description text on mobile */
+    }
+    .unique-features {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #ecf1f7; /* Light gray background for the section */
+        height: 12vh;
+    }
+}
+
+
+.hero-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    position: relative;
+}
+
+
+
+.cta-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: #FFC72C; /* Accent color */
+}
+
+.infinity-trans12 {
+    background-blend-mode: darken;
+    background-image: linear-gradient(180deg, #0A0A0A91 100%, #F2295B00 100%), url('./img1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 2vh 0;
+    height: 59vh; /* Default height */
+    width: 100%;
+    position: relative;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0.94;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    margin-top: -7vh;
+}
+
+.hom-fixed-grid-container1 {
+    font-size: 10vw; /* Default font size */
+    margin-left: 1vh;
+    margin-top: 15vh;
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 1200px) {
+    .infinity-trans12 {
+        height: 50vh; /* Reduce height for medium screens */
+        background-image: linear-gradient(180deg, #0A0A0A91 100%, #F2295B00 100%), url('./img1.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hom-fixed-grid-container1 {
+        font-size: 8vw; /* Adjust font size for better visibility */
+        margin-top: 12vh; /* Slightly adjust margin */
+    }
+}
+
+@media (max-width: 992px) {
+    .infinity-trans12 {
+        height: 45vh; /* Further reduce height for smaller screens */
+        background-image: linear-gradient(180deg, #0A0A0A91 100%, #F2295B00 100%), url('./img1.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hom-fixed-grid-container1 {
+        font-size: 6vw; /* Smaller font size for smaller devices */
+        margin-top: 10vh; /* Further adjust margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .infinity-trans12 {
+        height: 40vh; /* Set a height for mobile */
+        padding: 1vh 0; /* Reduce padding */
+        background-image: linear-gradient(180deg, #0A0A0A91 100%, #F2295B00 100%), url('./img1.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hom-fixed-grid-container1 {
+        font-size: 5vw; /* Even smaller font size */
+        margin-top: 8vh; /* Smaller margin */
+    }
+    .unique-features {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #ecf1f7; /* Light gray background for the section */
+        height: 110vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .infinity-trans12 {
+        height: 35vh; /* Minimum height for extra small screens */
+        background-image: linear-gradient(180deg, #0A0A0A91 100%, #F2295B00 100%), url('./img1.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hom-fixed-grid-container1 {
+        font-size: 4vw; /* Further reduce font size */
+        margin-top: 15vh; /* Smaller margin */
+    }
+    .unique-features {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #ecf1f7; /* Light gray background for the section */
+        height: 120vh;
+    }
+}
