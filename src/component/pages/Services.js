@@ -102,7 +102,7 @@ const Services = () => (
 
 const styles = {
   container: {
-    padding: "80px 20px",
+    padding: "300px 20px",
     backgroundColor: "#ecf1f7",
     textAlign: "center",
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Building2, HardHat, Ruler, Users } from 'lucide-react' // Importing required icons
 
 import WhoWeAre from '../pages/AboutUs';
 import Services from './Services';
@@ -116,37 +117,57 @@ function App() {
           </div>
           </div>
           </section>
-    
-          <div className="infinity-trans12">
-          <div className="hom-fixed-grid-container1">
-          <Marquee>Interior Design&nbsp;&nbsp;Modern Structures&nbsp;&nbsp;Modern Design&nbsp;&nbsp;Decoration</Marquee>
+                    <section className="py-2">
+          <div className="container mx-auto px-7 mb-9">
+            <h2 className="text-4xl font-bold text-center mb-12">Why Choose Arrow Structure?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Expertise Card */}
+              <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <Building2 className="mr-2 text-xl text-blue-600" />
+                  <h3 className="text-xl font-semibold">Expertise</h3>
+                </div>
+                <p className="text-gray-700">
+                  With years of experience in diverse projects, our team brings unparalleled expertise to every structural challenge.
+                </p>
+              </div>
+              
+              {/* Safety First Card */}
+              <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <HardHat className="mr-2 text-xl text-blue-600" />
+                  <h3 className="text-xl font-semibold">Safety First</h3>
+                </div>
+                <p className="text-gray-700">
+                  We prioritize safety in every aspect of our work, ensuring secure structures and construction processes.
+                </p>
+              </div>
+              
+              {/* Precision Card */}
+              <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <Ruler className="mr-2 text-xl text-blue-600" />
+                  <h3 className="text-xl font-semibold">Precision</h3>
+                </div>
+                <p className="text-gray-700">
+                  Our attention to detail and use of cutting-edge technology ensure precise, efficient, and reliable solutions.
+                </p>
+              </div>
+              
+              {/* Client-Centric Card */}
+              <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex items-center mb-4">
+                  <Users className="mr-2 text-xl text-blue-600" />
+                  <h3 className="text-xl font-semibold">Client-Centric</h3>
+                </div>
+                <p className="text-gray-700">
+                  We work closely with our clients, tailoring our services to meet their specific needs and vision.
+                </p>
+              </div>
+            </div>
           </div>
-          </div>
-          
-          {/* Unique Features Section */}
-          <section className="unique-features">
-          <h2>Why Choose Arrow Structure?</h2>
-          <div className="features-grid">
-          <div className="feature-item">
-          <h3>Expert Consultancy</h3>
-          <p>
-          With years of experience, we provide precise structural analysis and consultancy services for architects, developers, and homeowners.
-          </p>
-          </div>
-          <div className="feature-item">
-          <h3>Quality Construction</h3>
-          <p>
-          Our construction services ensure that your projects are completed on time, within budget, and with the highest standards of quality and safety.
-          </p>
-          </div>
-          <div className="feature-item">
-          <h3>Sustainable Solutions</h3>
-          <p>
-          We prioritize eco-friendly materials and practices to ensure sustainability and reduce the environmental impact of construction projects.
-          </p>
-          </div>
-          </div>
-          </section>
+        </section>
+        
           
           {/* About Us, Services, and Contact Us sections */}
           <Anim1/>
@@ -172,7 +193,16 @@ function App() {
         </div>
       </Marquee>
     </section>
-      <ContactUs />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+      <ContactUs  />
       </div>
       );
     }

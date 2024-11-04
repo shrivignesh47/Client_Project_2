@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhoWeAre = () => {
     return (
-        <section className="relative bg-white text-gray-800 py-16 px-6 rounded-lg shadow-lg max-w-5xl mx-auto overflow-hidden mb- -1">
+        <section className="relative bg-white text-gray-800 py-16 px-6 rounded-lg shadow-lg max-w-5xl mx-auto overflow-hidden -mt-14 md:-mt-10">
             {/* Background Image */}
             <div 
                 className="absolute inset-0 bg-cover bg-center opacity-20"

@@ -15,7 +15,7 @@ const BlueprintIcon = () => (
     <line x1="3" y1="9" x2="21" y2="9"></line>
     <line x1="3" y1="15" x2="21" y2="15"></line>
     <line x1="9" y1="3" x2="9" y2="21"></line>
-    <line x1="15" y1="3" x2="15" y1="21"></line>
+    <line x1="15" y1="3" x2="15" y2="21"></line>
   </svg>
 );
 
@@ -50,12 +50,12 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-#ecf1f7 text-black">
       <motion.header 
-        className="p-8 md:p-16 lg:p-24 pb-8 md:pb-12 lg:pb-16"
+        className="p-8 md:p-16 lg:p-24 pb-8 md:pb-12 lg:pb-26"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Building Structural Design</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 mr-3 mt-12 ">Building Structural Design</h1>
         <p className="text-xl md:text-2xl font-semibold text-gray-600">Professional services for all building types</p>
       </motion.header>
 

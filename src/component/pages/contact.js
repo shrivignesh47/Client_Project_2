@@ -1,133 +1,113 @@
-import React, { useState } from 'react';
-import { db, collection, addDoc } from './firebase';
+import { useState } from 'react'
+import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react'
 
-const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
+export default function ArrowStructuresMinimalistContact() {
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
-
-    try {
-      await addDoc(collection(db, 'contacts'), {
-        ...formData,
-        timestamp: new Date(),
-      });
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      alert('Thank you for reaching out! We will get back to you soon.');
-    } catch (err) {
-      setError('An error occurred. Please try again.');
-      console.error('Error adding document: ', err);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Form submission logic goes here
+    setIsSubmitted(true)
+  }
 
   return (
-    <div className="min-h-screen bg-#ecf1f7-50 flex items-center justify-center py-20 px-6">
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-5xl w-full flex flex-col lg:flex-row">
-        {/* Contact Info Section */}
-        <div className="lg:w-1/2 bg-gray-100 p-10 text-gray-700">
-          <h2 className="text-3xl font-semibold mb-4">CONTACT US</h2>
-          <p className="text-gray-600 mb-4">
-            Arrow Structures, <br />
-            5, Guru Govind Singh Road, <br />
-            R.S Puram, Coimbatore – 641002 <br />
-            Tamil Nadu, India
-          </p>
-          <p className="text-gray-600 mb-4">Contact Number: +91 88705 94827</p>
-          <p className="text-gray-600 mb-4">E-Mail: info@arrowstructures.com</p>
-          <div className="flex space-x-4 mt-4 text-gray-500">
-            <a href="#" className="hover:text-gray-700"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="hover:text-gray-700"><i className="fab fa-youtube"></i></a>
-            <a href="#" className="hover:text-gray-700"><i className="fab fa-facebook"></i></a>
-            <a href="#" className="hover:text-gray-700"><i className="fab fa-linkedin"></i></a>
+    <div className="min-h-screen bg-# flex items-center justify-center p-4 mt-20">
+      <div className="max-w-6xl w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left Column - Company Info */}
+          <div className="space-y-12">
+            <div>
+              <h1 className="text-4xl font-bold text-black mb-4">Arrow Structures</h1>
+              <p className="text-gray-600 text-lg">Building dreams, one structure at a time.</p>
+            </div>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <MapPin className="text-black w-6 h-6 mt-1" />
+                <p className="text-gray-600">5, Guru Govind Singh Road, R.S Puram, Coimbatore – 641002, Tamil Nadu, India</p>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Phone className="text-black w-6 h-6" />
+                <p className="text-gray-600">+91 88705 94827</p>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Mail className="text-black w-6 h-6" />
+                <p className="text-gray-600">info@arrowstructures.com</p>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-gray-200">
+              <h2 className="text-2xl font-semibold text-black mb-4">Business Hours</h2>
+              <div className="space-y-2">
+                <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
+                <p className="text-gray-600">Sunday: Closed</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Contact Form Section */}
-        <div className="lg:w-1/2 p-10">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <span className="text-gray-500"><i className="fas fa-user"></i></span>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-2 text-gray-800"
-              />
-            </div>
-            <div className="flex items-center space-x-3">
-              <span className="text-gray-500"><i className="fas fa-envelope"></i></span>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-2 text-gray-800"
-              />
-            </div>
-            <div className="flex items-center space-x-3">
-              <span className="text-gray-500"><i className="fas fa-tag"></i></span>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-2 text-gray-800"
-              />
-            </div>
-            <div className="flex items-start space-x-3">
-              <span className="text-gray-500"><i className="fas fa-comment"></i></span>
-              <textarea
-                name="message"
-                placeholder="Your message (optional)"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-2 text-gray-800 resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3 mt-6 text-white bg-gradient-to-r from-blue-600 to-blue-400 rounded-full shadow-md hover:from-blue-500 hover:to-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2"
-            >
-              {isSubmitting ? 'Sending...' : 'Submit'}
-            </button>
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-          </form>
+          {/* Right Column - Contact Form */}
+          <div className="bg-gray-50 p-8 rounded-lg">
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <h2 className="text-2xl font-semibold text-black mb-6">Get in Touch</h2>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-black focus:ring-1 focus:ring-black"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-black focus:ring-1 focus:ring-black"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-black focus:ring-1 focus:ring-black"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <textarea
+                    id="message"
+                    required
+                    rows={4}
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-black focus:ring-1 focus:ring-black"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-black text-white p-3 rounded flex items-center justify-center hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Send Message
+                  <Send className="w-4 h-4 ml-2" />
+                </button>
+              </form>
+            ) : (
+              <div className="text-center py-12">
+                <h3 className="text-2xl font-bold text-black mb-2">Thank You!</h3>
+                <p className="text-gray-600 mb-6">We've received your message and will get back to you soon.</p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="bg-black text-white p-3 rounded flex items-center justify-center hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Send Another Message
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default ContactUs;
+  )
+}

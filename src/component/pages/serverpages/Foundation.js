@@ -25,7 +25,7 @@ export default function FoundationDesign() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <motion.header 
-        className="p-8 md:p-16 lg:p-24 text-center relative overflow-hidden"
+        className="p-6 md:p-16 lg:p-24 text-center relative overflow-hidden mv t-14"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

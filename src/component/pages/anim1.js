@@ -8,8 +8,9 @@ export default function Anim() {
         display: 'flex',
         justifyContent: 'center',   // Center horizontally
         alignItems: 'center',       // Center vertically
-        height: '17vh',            // Full viewport height
-        zIndex:'1000',         // Padding around the image
+        height: '27vh',            // Full viewport height
+        zIndex:'1000',
+        marginTop:'30vh'         // Padding around the image
       }}
     >
       <img 
