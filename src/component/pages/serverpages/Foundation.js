@@ -10,7 +10,7 @@ const FoundationIcon = ({ icon: Icon, title }) => (
 );
 
 const GradientText = ({ children, className = "" }) => (
-  <span className={`bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary ${className}`}>
+  <span className={`bg-clip-text  bg-gradient-to-r from-primary to-secondary ${className}`}>
     {children}
   </span>
 );
@@ -25,7 +25,7 @@ export default function FoundationDesign() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <motion.header 
-        className="p-6 md:p-16 lg:p-24 text-center relative overflow-hidden mv t-14"
+        className="p-6 md:p-16 lg:p-24 text-center relative overflow-hidden mv t-14 mt-[1vh]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -59,56 +59,56 @@ export default function FoundationDesign() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Building} title="Multi-storey Structures" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 From low-rise to high-rise, we design foundations for all building types.
               </p>
             </div>
             {/* Card 2 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Shovel} title="Difficult Ground" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 Expertise in foundation design for structures on challenging terrains.
               </p>
             </div>
             {/* Card 3 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Layers} title="Comprehensive Analysis" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 Thorough investigation of ground and foundation conditions, including adjacent structures.
               </p>
             </div>
             {/* Card 4 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Zap} title="Specialized Solutions" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 Design of bored and driven piled foundations, reinforced concrete ground beams, and more.
               </p>
             </div>
             {/* Card 5 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Anchor} title="Adverse Conditions" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 Solutions for shrinkable clay soils and other adverse ground conditions.
               </p>
             </div>
             {/* Card 6 */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6">
               <div className="mb-4">
                 <FoundationIcon icon={Shield} title="Stabilization" />
               </div>
-              <p className="text-gray-700">
+              <p className="text-#ecf1f7-700">
                 Expert design of underpinning and foundation stabilization works.
               </p>
             </div>
@@ -145,7 +145,7 @@ export default function FoundationDesign() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 bg-background/50 backdrop-blur-sm">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6 bg-background/50 backdrop-blur-sm">
               <Quote className="text-primary mb-4" size={32} />
               <p className="text-lg italic mb-4">
                 "Their expertise in foundation design for our multi-storey project was invaluable. They tackled challenging ground conditions with innovative solutions."
@@ -153,7 +153,7 @@ export default function FoundationDesign() {
               <p className="font-semibold">- John Doe, Architect</p>
             </div>
             {/* Testimonial 2 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 bg-background/50 backdrop-blur-sm">
+            <div className="bg-#ecf1f7 shadow-lg rounded-lg p-6 bg-background/50 backdrop-blur-sm">
               <Quote className="text-primary mb-4" size={32} />
               <p className="text-lg italic mb-4">
                 "The team's comprehensive analysis and approach to our historic building's foundation stabilization was impressive. They ensured the structure's integrity while preserving its character."

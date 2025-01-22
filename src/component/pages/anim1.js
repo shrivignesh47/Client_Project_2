@@ -9,7 +9,7 @@ export default function Anim() {
         justifyContent: 'center',   // Center horizontally
         alignItems: 'center',       // Center vertically
         height: '27vh',            // Full viewport height
-        zIndex:'1000',
+        zIndex:'1',
         marginTop:'30vh'         // Padding around the image
       }}
     >
@@ -21,7 +21,7 @@ export default function Anim() {
           height: 'auto',            // Maintain aspect ratio
           borderRadius: '10px',      // Rounded corners
           padding: '1px',  
-          zIndex:'1000',  
+          zIndex:'1',  
         }}
       />
     </div>

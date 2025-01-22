@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '	#000000',      // Customize this value to your primary color
-        secondary: '#9333ea',    // Customize this value to your secondary color
+        secondary: '#fff',    // Customize this value to your secondary color
         background: '#f3f4f6',   // Customize for a background color
         mutedForeground: '#6b7280', // Customize for text-muted or similar
       },

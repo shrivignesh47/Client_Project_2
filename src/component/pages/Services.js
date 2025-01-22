@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Make sure to install `lucide-react`
 
 const services = [
   {
@@ -9,7 +7,14 @@ const services = [
     description: "Expert design services for constructing robust and efficient buildings.",
     link: "/building-structural-design",
     alt: "Building Structural Design",
-    imageUrl: "https://img.freepik.com/free-vector/build-your-life-vertical-banner-with-silhouettes-crane-unfinished-building-sunset-background-flat-illustration_1284-29080.jpg?t=st=1730437565~exp=1730441165~hmac=f43e5778b20db3a9b03d9805bf27d98d82a7753e41e2ff4179b7fd09576b098c&w=360",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1bjxO4ZG45hOc6PpWZFEW1MtFqOdDe14Eeg&s",
+  },
+  {
+    title: "Estimating And Costing",
+    description: "Accurate estimating and costing services for construction projects.",
+    link: "/estimating-and-costing",
+    alt: "Estimating And Costing",
+    imageUrl: "https://www.freshbooks.com/wp-content/uploads/2022/01/construction-cost-estimate.jpg",
   },
   {
     title: "Foundation Design",
@@ -19,39 +24,18 @@ const services = [
     imageUrl: "https://gdiengdesign.com/wp-content/uploads/2023/05/Footing-foundation-520x245-1.jpg",
   },
   {
-    title: "Estimating And Costing",
-    description: "Accurate estimating and costing services for construction projects.",
-    link: "/estimating-and-costing",
-    alt: "Estimating And Costing",
-    imageUrl: "https://img.freepik.com/premium-vector/buy-home-using-mobile-app-investment-property-tiny-people-pay-real-estate-online_1135642-360.jpg?ga=GA1.1.1688160461.1727348287&semt=ais_siglip",
-  },
-  {
     title: "Peer Review Audit On Existing Building Design",
     description: "Comprehensive peer review audits for existing building designs.",
     link: "/peer-review-audit",
     alt: "Peer Review Audit",
-    imageUrl: "https://img.freepik.com/free-vector/website-audit-concept-web-page-analysis-website-s-visibility-search-engines-seo-audit-web-data-analytics-isolated-flat-vector-illustration_613284-1955.jpg?ga=GA1.1.1688160461.1727348287&semt=ais_siglip",
-  },
-  {
-    title: "Temporary Works Design",
-    description: "Design of temporary works to support construction activities.",
-    link: "/temporary-works-design",
-    alt: "Temporary Works Design",
-    imageUrl: "https://arrowstructures.com/wp-content/uploads/2020/12/6.png",
+    imageUrl: "https://www.letsbuild.com/wp-content/uploads/2023/07/shutterstock_1247187910.png",
   },
   {
     title: "Value Engineering And Certification On Building Stability Check",
     description: "Value engineering and certification services for building stability.",
     link: "/value-engineering",
     alt: "Value Engineering",
-    imageUrl: "https://img.freepik.com/free-vector/construction-costs-abstract-concept-illustration-project-management-bank-loan-real-estate-business-design-project-building-investment-contractor-service-renovation_335657-3333.jpg?ga=GA1.1.1688160461.1727348287&semt=ais_siglip",
-  },
-  {
-    title: "Refurbishment And Conservation Design",
-    description: "Specialized design services for refurbishment and conservation projects.",
-    link: "/refurbishment-conservation-design",
-    alt: "Refurbishment And Conservation Design",
-    imageUrl: "https://arrowstructures.com/wp-content/uploads/2020/12/3.png",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStSjT2C_z6VbJxEp8Kuboe0d0KTkb43Ebi-Li8OeWzYr3pDODm2hFPV5aMAe_JiGZEC38&usqp=CAU",
   },
 ];
 
@@ -60,17 +44,26 @@ const ServiceCard = ({ title, description, link, alt, imageUrl }) => {
 
   return (
     <div
-      style={styles.card}
+      className="relative w-[360px] h-[300px] overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={styles.imageContainer}>
-        <img src={imageUrl} alt={alt} style={styles.image} />
+      <div className="p-0 w-full h-full">
+        <img
+          src={imageUrl}
+          alt={alt}
+          className="object-cover w-full h-full transition-transform duration-300 ease-in-out filter grayscale"
+        />
         {hovered && (
-          <div style={styles.overlay}>
-            <h3 style={styles.cardTitle}>{title}</h3>
-            <p style={styles.cardDescription}>{description}</p>
-            <Link to={link} style={styles.button}>Learn more</Link>
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 bg-white bg-opacity-70 backdrop-blur-sm">
+            <h3 className="text-lg font-semibold mb-2">{title}</h3>
+            <p className="text-sm text-center mb-4">{description}</p>
+            <a
+              href={link}
+              className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors"
+            >
+              Learn more
+            </a>
           </div>
         )}
       </div>
@@ -78,123 +71,66 @@ const ServiceCard = ({ title, description, link, alt, imageUrl }) => {
   );
 };
 
-const Services = () => (
-  <div style={styles.container}>
-    <h1 className="text-2xl font-bold text-center">Our Services</h1>
-    <p style={styles.subtitle}>We offer a range of expert services designed to meet your construction needs.</p>
-    <Swiper
-      spaceBetween={30}
-      slidesPerView={"auto"}
-      centeredSlides={true}
-      grabCursor={true}
-      loop={true} // Disable autoplay
-    >
-      <div style={styles.featuresContainer}>
-        {services.map((service, index) => (
-          <SwiperSlide key={index} style={{ width: "auto" }}>
-            <ServiceCard {...service} />
-          </SwiperSlide>
-        ))}
+export default function Component() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const cardWidth = 410; // Width of each card including margin
+  const visibleCards = 0; // Number of visible cards in the viewport
+
+  const totalCards = services.length;
+  const maxIndex = totalCards - visibleCards;
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1 > maxIndex ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 < 0 ? maxIndex : prevIndex - 1));
+  };
+
+  return (
+    <section className="py-16 bg-[#ecf1f7]">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-4">
+          Our Services
+        </h1>
+        <p className="text-lg text-center text-gray-600 mb-12">
+          We offer a range of expert services designed to meet your construction needs.
+        </p>
+        <div className="relative">
+          <div className="flex justify-center items-center">
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 z-20 p-2 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-200"
+            >
+              <ChevronLeft className="h-6 w-6" />
+              <span className="sr-only">Previous slide</span>
+            </button>
+            <div className="overflow-hidden w-full">
+              <div
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentIndex * cardWidth}px)`,
+                  width: `${totalCards * cardWidth}px`,
+                }}
+              >
+                {services.map((service, index) => (
+                  <div key={index} className="flex-shrink-0 w-[375px] mx-2">
+                    <ServiceCard {...service} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 z-20 p-2 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-200"
+            >
+              <ChevronRight className="h-6 w-6" />
+              <span className="sr-only">Next slide</span>
+            </button>
+          </div>
+        </div>
       </div>
-    </Swiper>
-  </div>
-);
-
-const styles = {
-  container: {
-    padding: "300px 20px",
-    backgroundColor: "#ecf1f7",
-    textAlign: "center",
-  },
-  title: {
-    color: "#333",
-    fontSize: "36px",
-    marginBottom: "10px",
-    fontFamily: "Arial, sans-serif",
-  },
-  subtitle: {
-    color: "#555",
-    fontSize: "18px",
-    marginBottom: "40px",
-    fontFamily: "Arial, sans-serif",
-    fontStyle: "italic",
-  },
-  featuresContainer: {
-    display: "flex",
-    padding: "0 10px",
-    gap: "30px",
-  },
-  card: {
-    position: "relative",
-    width: "500px",
-    height: "291px",
-    borderRadius: "12px",
-    overflow: "hidden",
-    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    cursor: "pointer",
-    margin: "0",
-  },
-  imageContainer: {
-    position: "relative",
-    borderRadius: "12px",
-    overflow: "hidden",
-    height: "300px",
-  },
-  image: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    filter: " grayscale(100%)",
-    transition: "transform 0.3s ease",
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: "rgba(255, 255, 255, 0.7)",
-    backdropFilter: "blur(10px)",
-    color: "#333",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "20px",
-    opacity: 1,
-    transition: "opacity 0.3s ease",
-    textAlign: "center",
-  },
-  cardTitle: {
-    fontSize: "20px",
-    margin: "0 0 10px",
-    fontWeight: "600",
-  },
-  cardDescription: {
-    fontSize: "15px",
-    margin: "0 0 15px",
-    lineHeight: "1.5",
-  },
-  button: {
-    backgroundColor: "black",
-    color: "#ffffff",
-    padding: "10px 15px",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    textDecoration: "none",
-    transition: "background-color 0.3s",
-  },
-  "@media (max-width: 768px)": {
-    featuresContainer: {
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    card: {
-      width: "90%",
-    },
-  },
-};
-
-export default Services;
+    </section>
+  );
+}

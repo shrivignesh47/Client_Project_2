@@ -124,7 +124,7 @@ function App() {
               {/* Expertise Card */}
               <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <Building2 className="mr-2 text-xl text-blue-600" />
+                  <Building2 className="mr-2 text-xl text-black-600" />
                   <h3 className="text-xl font-semibold">Expertise</h3>
                 </div>
                 <p className="text-gray-700">
@@ -135,7 +135,7 @@ function App() {
               {/* Safety First Card */}
               <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <HardHat className="mr-2 text-xl text-blue-600" />
+                  <HardHat className="mr-2 text-xl text-black-600" />
                   <h3 className="text-xl font-semibold">Safety First</h3>
                 </div>
                 <p className="text-gray-700">
@@ -146,7 +146,7 @@ function App() {
               {/* Precision Card */}
               <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <Ruler className="mr-2 text-xl text-blue-600" />
+                  <Ruler className="mr-2 text-xl text-black-600" />
                   <h3 className="text-xl font-semibold">Precision</h3>
                 </div>
                 <p className="text-gray-700">
@@ -157,7 +157,7 @@ function App() {
               {/* Client-Centric Card */}
               <div className="border border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  <Users className="mr-2 text-xl text-blue-600" />
+                  <Users className="mr-2 text-xl text-black-600" />
                   <h3 className="text-xl font-semibold">Client-Centric</h3>
                 </div>
                 <p className="text-gray-700">
@@ -174,25 +174,34 @@ function App() {
           <WhoWeAre />
       <Services />
 
-      <section className="mt-3">
-      <h2 className="text-2xl font-bold text-center">Our Esteemed Clients</h2>
-      <Marquee speed={50} className="mt-20" pauseOnHover={true} loop={0}>
-        <div className="flex space-x-10"> {/* Set space-x-8 to provide equal spacing */}
-          {/* Marquee Item */}
-          {[clientLogo1, clientLogo2, clientLogo3, clientLogo4, clientLogo5, clientLogo6, clientLogo7].map((logo, index) => (
-            <div key={index} className="flex-shrink-0 w-32 h-32 bg-black flex items-center justify-center overflow-hidden">
-              <img src={logo} alt={`Client Logo ${index + 1}`} className="w-full h-full object-contain filter grayscale" />
-            </div>
-          ))}
-          {/* Duplicate logos for seamless scrolling */}
-          {[clientLogo1, clientLogo2, clientLogo3, clientLogo4, clientLogo5, clientLogo6, clientLogo7].map((logo, index) => (
-            <div key={index + 7} className="flex-shrink-0 w-32 h-32 bg-black flex items-center justify-center overflow-hidden">
-              <img src={logo} alt={`Client Logo ${index + 1}`} className="w-full h-full object-contain filter grayscale" />
-            </div>
-          ))}
+<section className="mt-3">
+  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">Our Esteemed Clients</h2>
+  <Marquee speed={50} className="mt-20" pauseOnHover={true} loop={0}>
+    <div className="flex items-center">
+      {/* First Set of Logos */}
+      {[clientLogo1, clientLogo2, clientLogo3, clientLogo4, clientLogo5, clientLogo6, clientLogo7].map((logo, index) => (
+        <div
+          key={`first-${index}`}
+          className="flex-shrink-0 w-32 h-32 bg-black flex items-center justify-center overflow-hidden mx-5"
+        >
+          <img src={logo} alt={`Client Logo ${index + 1}`} className="w-full h-full object-contain filter grayscale" />
         </div>
-      </Marquee>
-    </section>
+      ))}
+      {/* Add an explicit spacer between the first and duplicated sets */}
+      <div className="flex-shrink-0 w-10 h-32"></div>
+      {/* Second Set of Logos */}
+      {[clientLogo1, clientLogo2, clientLogo3, clientLogo4, clientLogo5, clientLogo6, clientLogo7].map((logo, index) => (
+        <div
+          key={`second-${index}`}
+          className="flex-shrink-0 w-32 h-32 bg-black flex items-center justify-center overflow-hidden mx-5"
+        >
+          <img src={logo} alt={`Client Logo ${index + 1}`} className="w-full h-full object-contain filter grayscale" />
+        </div>
+      ))}
+    </div>
+  </Marquee>
+</section>
+
     <br></br>
     <br></br>
     <br></br>

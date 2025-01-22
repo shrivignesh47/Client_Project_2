@@ -73,7 +73,7 @@ export default function Component() {
               alt={image.alt}
               width={800}
               height={400}
-              className="w-full h-48 object-cover rounded-lg shadow-lg" // Fixed height for uniformity
+              className="w-full h-48 object-cover rounded-lg shadow-lg"
             />
           </motion.div>
         ))}
@@ -82,7 +82,7 @@ export default function Component() {
       <main className="space-y-16 p-8 md:p-16 lg:p-24 pt-0">
         <motion.section {...fadeInUp}>
           <p className="text-lg md:text-xl font-bold leading-relaxed">
-            We provide professional services for all building types, from state of the art to historic buildings, our projects range from small domestic to major projects of framed and multi-storey residential or commercial building design.
+            We provide professional services for all building types, from state-of-the-art to historic buildings. Our projects range from small domestic to major framed and multi-storey residential or commercial building designs.
           </p>
         </motion.section>
         
@@ -98,7 +98,7 @@ export default function Component() {
             </motion.li>
             <motion.li className="flex items-start" {...fadeInUp}>
               <ArrowRight className="mr-2 mt-1 flex-shrink-0" />
-              <p className="text-lg font-bold">We regularly design projects of reinforced concrete and steel framed construction, steel concrete and other composite construction, masonry, timber, structural aluminium and glass construction.</p>
+              <p className="text-lg font-bold">We regularly design projects of reinforced concrete and steel-framed construction, steel-concrete and other composite construction, masonry, timber, structural aluminum, and glass construction.</p>
             </motion.li>
             <motion.li className="flex items-start" {...fadeInUp}>
               <ArrowRight className="mr-2 mt-1 flex-shrink-0" />
@@ -130,7 +130,7 @@ export default function Component() {
             <h2 className="text-2xl md:text-3xl font-bold ml-4">Our Approach</h2>
           </div>
           <p className="text-lg font-bold">
-            We highly value and ensure development of a close working relationship with the client, Architect and other design professionals.
+            We highly value and ensure the development of a close working relationship with the client, Architect, and other design professionals.
           </p>
         </motion.section>
       </main>

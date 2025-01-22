@@ -27,18 +27,17 @@ export default function ArrowStructuresMinimalistContact() {
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="text-black w-6 h-6" />
-                <p className="text-gray-600">+91 88705 94827</p>
+                <a href="tel:+918870594827" className="text-gray-600">+91 88705 94827</a>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="text-black w-6 h-6" />
-                <p className="text-gray-600">info@arrowstructures.com</p>
+                <a href="mailto:info@arrowstructures.com" className="text-gray-600">info@arrowstructures.com</a>
               </div>
             </div>
             <div className="pt-6 border-t border-gray-200">
               <h2 className="text-2xl font-semibold text-black mb-4">Business Hours</h2>
               <div className="space-y-2">
-                <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
+                <p className="text-gray-600">Monday - Saturday: 9:30 AM - 6:30 PM</p>
                 <p className="text-gray-600">Sunday: Closed</p>
               </div>
             </div>

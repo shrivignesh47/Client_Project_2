@@ -27,16 +27,19 @@ const Navbar = () => {
     };
   }, []);
 
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className={`navbar-brand ${scrolled ? 'scrolled' : ''}`}>
           <img src={logo} alt="Logo" className="logo" />
-          <span className={`brand-name ${scrolled ? 'scrolled' : ''}`}>ARROW STRUCTURE</span>
+          <span className={`brand-name ${scrolled ? 'scrolled' : ''}`}>ARROW STRUCTURES</span>
         </div>
 
         <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
-          {/* Toggle between 9 dots and an "X" icon */}
           {isOpen ? (
             <span className="close-icon">✕</span>
           ) : (
@@ -45,10 +48,10 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-links ${isOpen ? 'open' : ''} ${scrolled ? 'scrolled' : ''}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/about-us">About Us</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/" onClick={closeNavbar}>Home</Link></li>
+          <li><Link to="/services" onClick={closeNavbar}>Services</Link></li>
+          <li><Link to="/about-us" onClick={closeNavbar}>About Us</Link></li>
+          <li><Link to="/contact" onClick={closeNavbar}>Contact</Link></li>
         </ul>
       </nav>
     </>

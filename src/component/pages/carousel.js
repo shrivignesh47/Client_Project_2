@@ -10,7 +10,7 @@ export default function Carousel() {
     {
       title: "AGAM HOUSE",
       subtitle: "Houses",
-      imageUrl:'https://mawidesign.in/wp-content/uploads/2022/11/16AA-scaled.jpg'
+      imageUrl:'https://mawidesign.in/wp-content/uploads/2022/11/16AA-scaled.jpg' //here update your image url for carousel image changes
     },
     {
       title: "THROUGH",
